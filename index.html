@@ -1,52 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Exames</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agende Seu Exame</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#agendar">Agendar Exame</a></li>
+                <li><a href="#consultas">Consultas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-      <section>
-        <div class="calendar">
-          <div class="datepicker">
-            <div class="datepicker-top">
-              <button class="tag">Hoje</button>
-              <div class="month-selector">
-                <button class="arrow" id="prevMonthBtn">Anterior</button>
-                <span class="month-name" id="monthName">Outubro 2024</span>
-                <button class="arrow" id="nextMonthBtn">Seguinte</button>
+        <section class="section1">
+            <div class="calendar">
+              <div class="datepicker">
+                <div class="datepicker-top">
+                  <button class="tag">Hoje</button>
+                  <div class="month-selector">
+                    <button class="arrow" id="prevMonthBtn">Anterior</button>
+                    <span class="month-name" id="monthName">Outubro 2024</span>
+                    <button class="arrow" id="nextMonthBtn">Seguinte</button>
+                  </div>
+                </div>
+                <div class="datepicker-calendar" id="calendarDays">
+                  <span class="day">Seg</span>
+                  <span class="day">Ter</span>
+                  <span class="day">Qua</span>
+                  <span class="day">Qui</span>
+                  <span class="day">Sex</span>
+                  <span class="day">Sab</span>
+                  <span class="day">Dom</span>
+                </div>
               </div>
             </div>
-            <div class="datepicker-calendar" id="calendarDays">
-              <span class="day">Seg</span>
-              <span class="day">Ter</span>
-              <span class="day">Qua</span>
-              <span class="day">Qui</span>
-              <span class="day">Sex</span>
-              <span class="day">Sab</span>
-              <span class="day">Dom</span>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        
+        <section id="agendar">
+            <h2>Agendar Exame</h2>
+            <form class="formContainer">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
 
-      <section>
-        <div class="agendamentos">
-          <h1>Seus Agendamentos:</h1>
-          <div class="agendamentosCard">
-            <div class="agendamentosCardHeader">
-              <h2>Exame de vista</h2>
-              <h3>22/10/2024</h3>
-            </div>
-            <div class="agendamentosCardBody">
-                Confirmado
-            </div>
-          </div>
-        </div>
-      </section>
+                <label for="nome">CPF:</label>
+                <input type="number" id="nome" name="nome" required>
+                
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="tipo-exame">Tipo de serviço:</label>
+                <select id="tipo-exame" name="tipo-exame" required>
+                    <option value="sangue">serviço 1</option>
+                    <option value="imagem">serviço 2</option>
+                    <option value="urinario">serviço 3</option>
+                </select>
+
+                <button type="submit">Agendar</button>
+            </form>
+        </section>
+
+        
     </main>
+
+    <footer>
+        <p>Contato: (11) 1234-5678</p>
+        <p>Email: contato@exames.com</p>
+        <p>&copy; 2024 Agende Seu Exame</p>
+    </footer>
+
     <script src="index.js"></script>
-  </body>
+</body>
 </html>

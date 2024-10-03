@@ -8,11 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>Agende Seu Exame</h1>
+        <h1>Agendamento</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#agendar">Agendar Exame</a></li>
+                <li><a href="#agendar">Agendar</a></li>
                 <li><a href="#consultas">Consultas</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -45,33 +45,63 @@
           </section>
         
         <section id="agendarSection">
-            <h2>Agendar Exame</h2>
+            <h2>Fazer um agendamento</h2>
             <form class="formContainer">
+
+              <div>
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required>
+                </div>
 
-                <label for="nome">CPF: </label>
-                <input type="number" id="nome" name="nome" required>
-                
+                <div>
+                <label for="cpf">CPF: </label>
+                <input type="number" id="cpf" name="cpf" required>
+                </div>
+
+                <div>
                 <label for="data">Data: </label>
                 <input type="text" id="inputData" />
+                </div>
 
+                <div>
                 <label for="hora">Hora: </label>
                 <input type="time" id="hora" name="hora" required>
+                </div>
 
+                <div>
                 <label for="tipo-exame">Tipo de serviço:</label>
                 <select id="tipo-exame" name="tipo-exame" required>
-                    <option value="sangue">serviço 1</option>
-                    <option value="imagem">serviço 2</option>
-                    <option value="urinario">serviço 3</option>
+                    <option value="">serviço 1</option>
+                    <option value="">serviço 2</option>
+                    <option value="">serviço 3</option>
                 </select>
+                </div>
 
+                <div>
                 <label for="observacao">Observação: </label>
                 <input type="text" id="observacao" name="obervacao" required>
+                </div>
 
+                <div>
+                  <label for="arquivos">Arquivos:</label>
+                  <input type="file" id="arquivos" name="arquivos" multiple>
+              </div>
+
+                <div>
                 <input type="submit" id="agendar" value="Agendar">
+                </div>
+                
             </form>
         </section>
+        
+        <div class="alert">
+          <div class="alert-success">
+            <h3>Agendamento realizado!</h3>
+          </div>
+          <div class="alert-error">
+            <h3>Ocorreu um erro</h3>
+          </div>
+        </div>
 
         
     </main>

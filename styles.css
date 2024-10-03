@@ -42,6 +42,8 @@ nav a {
     text-decoration: none;
 }
 
+
+
 main {
     padding: 20px;
 }
@@ -68,10 +70,12 @@ footer {
     display: flex;
     flex-direction: column;
 	flex-wrap: wrap;
+	gap: 20px;
 }
 
 #agendarSection{
 	display: none;
+	width: 600px;
 }
 
 button {
@@ -97,10 +101,12 @@ button {
 }
 
 .calendar{
-	height: 400px;
+	height: 440px;
 }
 
-
+.alert{
+	display: none;
+}
 
 .tag {
 	margin-right: .5rem;

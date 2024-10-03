@@ -24,17 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   calendarDaysElement.addEventListener("dblclick", function(event) {
     if (event.target.classList.contains("date")) {
-      // Mostra o sectionAgendar
       document.getElementById("agendarSection").style.display = "block";
+      document.getElementById("agendarSection").scrollIntoView;
     }
+    
   });
+
 
   calendarDaysElement.addEventListener("click", function(event) {
     if (event.target.classList.contains("date")) {
       // Pega o texto do dia clicado
       const dia = event.target.textContent;
-      const mes = monthNameElement.textContent;
+      // Pega o texto do mês
+      const mes = monthNameElement.textContent.split(" ")[0]; // Pega apenas o nome do mês
       const ano = currentYear;
+
+      
 
       // Formata a data no formato DD/MM/AAAA
       const meses = {
@@ -53,13 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       const dataFormatada = `${dia}/${meses[mes]}/${ano}`;
 
-      // Pega o input de data no form
       const inputData = document.getElementById("inputData");
-
-      // Seta a data formatada como o valor do input
       inputData.value = dataFormatada;
     }
   });
+
+
 
   document.getElementById("nextMonthBtn").addEventListener("click", function () {
     currentMonth++;
@@ -109,4 +113,37 @@ document.addEventListener("DOMContentLoaded", function () {
       year === today.getFullYear()
     );
   }
+
+
+});
+
+$(document).ready(function () {
+  $('#agendarSection form').on('submit', function (event) {
+      event.preventDefault();
+
+      const formData = {
+          nome: $('#nome').val(),
+          cpf: $('#cpf').val(),
+          data: $('#inputData').val(),
+          hora: $('#hora').val(),
+          tipo_exame: $('#tipo-exame').val(),
+          observacao: $('#observacao').val()
+      };
+
+      $.ajax({
+          type: 'POST',
+          url: 'agendar.php',
+          data: formData,
+          dataType: 'json',
+          success: function (response) {
+              alert(response.message);
+              // Limpar o formulário após o sucesso
+              $('#agendarSection form')[0].reset();
+              $('#agendarSection').hide(); // Esconder a seção após agendar
+          },
+          error: function () {
+              alert('Ocorreu um erro ao processar o agendamento.');
+          }
+      });
+  });
 });

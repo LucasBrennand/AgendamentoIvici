@@ -21,7 +21,7 @@
 
     <main>
         <section id="calendarSection">
-            <div class="calendar">
+            
               <div class="datepicker">
                 <div class="datepicker-top">
                   <button class="tag" id="todayBtn">Hoje</button>
@@ -41,13 +41,12 @@
                   <span class="day">Dom</span>
                 </div>
               </div>
-            </div>
+            
           </section>
         
         <section id="agendarSection">
             <h2>Fazer um agendamento</h2>
-            <form class="formContainer">
-
+            <form class="formContainer" id="agendamentoForm" method="post">
               <div>
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required>
@@ -92,6 +91,7 @@
                 </div>
                 
             </form>
+            <div id="mensagem"></div>
         </section>
         
         <div class="alert">
@@ -109,9 +109,30 @@
     <footer>
         <p>Contato: (11) 1234-5678</p>
         <p>Email: contato@exames.com</p>
-        <p>&copy; 2024 Agende Seu Exame</p>
+        <p>&copy; 2024</p>
     </footer>
 
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#agendamentoForm').submit(function(event) {
+                event.preventDefault();
+                let formData = $('#agendamentoForm');
+                console.log(formData);
+                $.ajax({
+                    type: 'POST',
+                    url: 'agendar.php',
+                    data: $(formData).serialize(),
+                    success: function(data) {
+                        $('#mensagem').html(data);
+                    },
+                    error: function() {
+                        $('#mensagem').html('Ocorreu um erro ao enviar o agendamento.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

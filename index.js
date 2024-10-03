@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCalendar();
 
+  
+
   document.getElementById("prevMonthBtn").addEventListener("click", function () {
     currentMonth--;
     if (currentMonth < 0) {
@@ -117,33 +119,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-$(document).ready(function () {
-  $('#agendarSection form').on('submit', function (event) {
-      event.preventDefault();
 
-      const formData = {
-          nome: $('#nome').val(),
-          cpf: $('#cpf').val(),
-          data: $('#inputData').val(),
-          hora: $('#hora').val(),
-          tipo_exame: $('#tipo-exame').val(),
-          observacao: $('#observacao').val()
-      };
-
-      $.ajax({
-          type: 'POST',
-          url: 'agendar.php',
-          data: formData,
-          dataType: 'json',
-          success: function (response) {
-              alert(response.message);
-              // Limpar o formulário após o sucesso
-              $('#agendarSection form')[0].reset();
-              $('#agendarSection').hide(); // Esconder a seção após agendar
-          },
-          error: function () {
-              alert('Ocorreu um erro ao processar o agendamento.');
-          }
-      });
-  });
-});

@@ -59,25 +59,19 @@ footer {
     padding: 10px 0;
     background-color: #2dbdff;
     color: white;
-    position: relative;
+    position: static;
     bottom: 0;
     width: 100%;
 }
 
 .formContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+	flex-wrap: wrap;
 }
 
-section1 {
-	font-family: "Inter", sans-serif;
-	line-height: 1.5;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #55427e;
-	color: var(--c-text-primary);
+#agendarSection{
+	display: none;
 }
 
 button {
@@ -100,6 +94,10 @@ button {
 
 .datepicker-top {
 	margin-bottom: 1rem;
+}
+
+.calendar{
+	height: 400px;
 }
 
 

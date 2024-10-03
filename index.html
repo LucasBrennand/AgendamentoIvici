@@ -20,11 +20,11 @@
     </header>
 
     <main>
-        <section class="section1">
+        <section id="calendarSection">
             <div class="calendar">
               <div class="datepicker">
                 <div class="datepicker-top">
-                  <button class="tag">Hoje</button>
+                  <button class="tag" id="todayBtn">Hoje</button>
                   <div class="month-selector">
                     <button class="arrow" id="prevMonthBtn">Anterior</button>
                     <span class="month-name" id="monthName">Outubro 2024</span>
@@ -44,19 +44,19 @@
             </div>
           </section>
         
-        <section id="agendar">
+        <section id="agendarSection">
             <h2>Agendar Exame</h2>
             <form class="formContainer">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required>
 
-                <label for="nome">CPF:</label>
+                <label for="nome">CPF: </label>
                 <input type="number" id="nome" name="nome" required>
                 
-                <label for="data">Data:</label>
-                <input type="date" id="data" name="data" required>
+                <label for="data">Data: </label>
+                <input type="text" id="inputData" />
 
-                <label for="hora">Hora:</label>
+                <label for="hora">Hora: </label>
                 <input type="time" id="hora" name="hora" required>
 
                 <label for="tipo-exame">Tipo de serviço:</label>
@@ -66,7 +66,10 @@
                     <option value="urinario">serviço 3</option>
                 </select>
 
-                <button type="submit">Agendar</button>
+                <label for="observacao">Observação: </label>
+                <input type="text" id="observacao" name="obervacao" required>
+
+                <input type="submit" id="agendar" value="Agendar">
             </form>
         </section>
 

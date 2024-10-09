@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCalendar();
 
-  
-
   document.getElementById("prevMonthBtn").addEventListener("click", function () {
     currentMonth--;
     if (currentMonth < 0) {
@@ -24,14 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCalendar();
   });
 
-  calendarDaysElement.addEventListener("dblclick", function(event) {
+  calendarDaysElement.addEventListener("click", function(event) {
     if (event.target.classList.contains("date")) {
       document.getElementById("agendarSection").style.display = "block";
       document.getElementById("agendarSection").scrollIntoView;
     }
     
   });
-
 
   calendarDaysElement.addEventListener("click", function(event) {
     if (event.target.classList.contains("date")) {
@@ -40,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Pega o texto do mês
       const mes = monthNameElement.textContent.split(" ")[0]; // Pega apenas o nome do mês
       const ano = currentYear;
-
-      
 
       // Formata a data no formato DD/MM/AAAA
       const meses = {
@@ -64,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
       inputData.value = dataFormatada;
     }
   });
-
-
 
   document.getElementById("nextMonthBtn").addEventListener("click", function () {
     currentMonth++;
@@ -115,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
       year === today.getFullYear()
     );
   }
-
 
 });
 

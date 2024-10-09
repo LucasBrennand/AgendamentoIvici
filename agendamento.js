@@ -11,6 +11,9 @@ $(document).ready(function() {
         contentType: false,
             processData: false,
             success: function (response) {
+                if (response.status === 'success') {
+                    console.log(response.message);
+                }
                 $('#mensagem').html(response); // Mostra a resposta na div com id "mensagem"
             },
             error: function () {

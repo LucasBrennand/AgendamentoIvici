@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Exames</title>
+    <title>Agendamento Ivici</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,8 +20,7 @@
     </header>
 
     <main>
-        <section id="calendarSection">
-            
+        <section id="calendarSection" class="calendarSection">
               <div class="datepicker">
                 <div class="datepicker-top">
                   <button class="tag" id="todayBtn">Hoje</button>
@@ -44,8 +43,10 @@
             
           </section>
         
-        <section id="agendarSection">
-            <h2>Fazer um agendamento</h2>
+        <section id="agendarSection" class="agendarSection">
+          <div class="agendamentoContainer">
+            <div id="agendar" class="agendamentoCard">
+            <h2 style="text-align: center;">Fazer um agendamento</h2>
             <form class="formContainer" id="agendamentoForm" method="post">
               <div>
                 <label for="nome">Nome: </label>
@@ -97,6 +98,14 @@
                 
             </form>
             <div id="mensagem"></div>
+          </div>
+
+          <div id="seusAgendamentos" class="agendamentoCard">
+            <h2 style="text-align: center;">Seus agendamentos</h2>
+            <div id="agendamentos"></div>
+          </div>
+        </div>
+        
         </section>
         
         <div class="alert">
@@ -117,7 +126,7 @@
         <p>&copy; 2024</p>
     </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
-      <script src="index.js"></script>
+      <script src="script.js"></script>
       <script src="agendamento.js"></script>
 </body>
 </html>

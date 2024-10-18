@@ -109,6 +109,33 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
+  document.getElementById('agendamentoForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Capturar os valores dos campos
+    const tipoServico = document.getElementById('tipoServico').value;
+    const data = document.getElementById('data').value;
+    const hora = document.getElementById('hora').value;
+    
+    // Criar um novo elemento de lista
+    const novoAgendamento = document.createElement('div');
+    novoAgendamento.classList.add('agendamentoItem');
+    novoAgendamento.innerHTML = `
+      <p><strong>Tipo de Serviço:</strong> ${tipoServico}</p>
+      <p><strong>Data:</strong> ${data}</p>
+      <p><strong>Hora:</strong> ${hora}</p>
+    `;
+    
+    // Adicionar o novo agendamento ao elemento seusAgendamentos
+    document.getElementById('agendamentos').appendChild(novoAgendamento);
+    
+    // Limpar o formulário
+    document.getElementById('agendamentoForm').reset();
+    
+    // Exibir mensagem de sucesso
+    document.querySelector('.alert-success').style.display = 'block';
+  });
+
 });
 
 

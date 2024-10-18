@@ -75,6 +75,13 @@ main {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.agendamentoCard li{
+	margin: 30px;
+	background-color: #e7eaee;
+	list-style-type: none;
+	border-radius: 4px;
+}
+
 footer {
     text-align: center;
     padding: 10px 0;
